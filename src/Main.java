@@ -6,5 +6,6 @@ public class Main {
         Bank bank = new Bank(acc1, acc2);
         System.out.println(bank.transfer(acc1, acc2, 215000));
         bank.printNumberAccounts();
+
     }
 }

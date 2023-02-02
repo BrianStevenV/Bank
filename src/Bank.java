@@ -1,10 +1,10 @@
 public class Bank {
-    Account acc1;
-    Account acc2;
+    private Account acc1;
+    private Account acc2;
 
-    double realized;
+    private double realized;
 
-    double result;
+   private double result;
 
     public Bank(Account acc1, Account acc2){
         this.acc1 = acc1;
@@ -12,18 +12,22 @@ public class Bank {
     }
 
     public double transfer(Account acc1, Account acc2, double value){
-        if(this.acc1.balanceAccount - value > 0){
+        if(this.acc1.getBalanceAccount() - value > 0){
             realized = acc1.setWithdrawl(value);
             System.out.println("El saldo de la primera cuenta es: " + realized);
             result = acc2.setEntry(value);
-            /*realized = this.acc1.balanceAccount - value;*/
         } else {
             System.out.println("Error.");
         }
         return result;
     }
 
-    public void printNumberAccounts(){
-        System.out.println("The accounts has number: " + this.acc1.numberAccount + " and " + this.acc2.numberAccount);
+    public String printNumberAccounts(){
+        String value ="account: " + this.acc1.getNumberAccount() + " and " + this.acc2.getNumberAccount();
+        System.out.println(value);
+        return value;
     }
+
+
+
 }
